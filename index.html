@@ -1,0 +1,173 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+<link href="style.css" rel="stylesheet">
+<title>Efficient bandwidth extension of musical signals
+using a differentiable harmonic plus noise model</title>
+</head>
+<body>
+
+    <div id="header" class="container-fluid">
+            <h1>Fast Third-Octave Privacy</h1>
+   </div>
+
+
+<div class="authors">
+	Modan Tailleur, Chaymae Benaatia, Mathieu Lagrange, Pierre Aumond, Vincent Tourre
+</div>
+<div class="authors">
+	Contact: modan.tailleur@ls2n.fr
+</div>
+<div class="container">
+    <h2>Abstract</h2>
+    <p>
+      TBF    </p>
+    <p>Experience code is available in <a href="https://github.com/modantailleur/paperThirdOctavePrivacy">this github repository</a>.</p>
+</div>
+
+<div class="container" id="table_techniques">
+  <h2>Voice retrieval from Fast Third-Octave</h2>
+  <p>Bellow, the voice extracts generated from the different methods on LJ002-0068.wav audio from the LJSpeech test set.</p>
+  <table class="table table-responsive">
+      <thead>
+        <tr class="text-center">
+          <td rowspan="2"></td>
+          <td rowspan="2"></td>
+          <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">AL0</td>
+          <td style="border-left: 1px solid rgb(185, 185, 185);">AL1</td>
+          <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">AL2</td>
+          <td rowspan="2" style="border-left: 1px solid rgb(185, 185, 185);">Reference</td>
+      </tr>
+      <tr class="text-center">
+          <td style="border-left: 1px solid rgb(185, 185, 185);">PINV</td>
+          <td>Diffspec</td>
+          <td style="border-left: 1px solid rgb(185, 185, 185);">Diffspec</td>
+          <td style="border-left: 1px solid rgb(185, 185, 185);">Diffwave</td>
+          <td>Diffspec</td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="desc">LJ002-0068</td>
+          <td class="desc">LJSpeech</td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/evalset=ljspeech+method=pinv+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=tau+diff_steps=1000+epoch=40+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=librispeech+diff_steps=1000+epoch=40+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffwave+schedule=DDPM+seed=71+step=vocode+tho_type=fast___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+      </tr>
+      <tr>
+          <td class="desc">8463-294828-0003.flac</td>
+          <td class="desc">Librispeech</td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/evalset=librispeech+method=pinv+step=vocode+tho_type=fast___gomin___8463-294828-0003.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=tau+diff_steps=1000+epoch=40+evalset=librispeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___8463-294828-0003.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=librispeech+diff_steps=1000+epoch=40+evalset=librispeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___8463-294828-0003.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">-</td> <!-- Replaced audio with a dash -->
+          <td class="text-center">-</td> <!-- Replaced audio with a dash -->
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/8463-294828-0003.wav" type="audio/wav">
+              </audio>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+    <p>On the PINV audios, Whisper "large-v3" leads to a WER of 60%, which seems wrong as no word is seemingly intelligible.</p>
+
+</div>
+
+<div class="container" id="table_effects">
+  <h2>Influence of diffusion steps</h2>
+  <p>Bellow, the voice extracts generated from training on LJSpeech on LJ002-0068.wav audio from the LJSpeech test set. We can hear that with 200 diffusion steps, the audio quality is very similar, but less words can be understood, and speech is a little bit more jerky.</p>
+  <table class="table table-responsive">
+    <thead>
+      <tr class="text-center">
+        <td rowspan="2"></td>
+        <td rowspan="2"></td>
+        <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">Diffusion steps</td>
+    </tr>
+    <tr class="text-center">
+        <td style="border-left: 1px solid rgb(185, 185, 185);">200</td>
+        <td>1000</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="desc">LJ002-0068</td>
+        <td class="desc">LJSpeech</td>
+        <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+            <audio controls class="sample_audio">
+                <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=200+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+            </audio>
+        </td>
+        <td class="text-center">
+            <audio controls class="sample_audio">
+                <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+            </audio>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+
+  
+</div>
+
+<script>
+function setupCallback(elem, elems) {
+  elem.addEventListener("play", function () {
+    for (var other of elems) {
+      if (other !== elem) {
+        other.pause();
+        // other.currentTime = 0.;
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.body.getElementsByTagName("audio");
+  for (var elem of elems) {    setupCallback(elem, elems);
+  }
+});
+</script>
+</body>
+</html>

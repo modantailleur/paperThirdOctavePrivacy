@@ -1,0 +1,17 @@
+pann/Cnn14_DecisionLevelMax_mAP=0.385.pth
+pann/ResNet38_mAP=0.434.pth
+doce
+efficient_net
+0-old
+TRASH
+results/model-mymodel.pt
+gomin/gan_state_dict.pt
+reference_models/TOO_HEAVY/
+reference_models/
+felix/
+LJSpeech_dataset/
+audio/
+wav2vec2_checkpoint/
+pretrained_models/
+figures/
+__pycache__/
