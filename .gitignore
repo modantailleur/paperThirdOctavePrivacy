@@ -10,7 +10,6 @@ reference_models/TOO_HEAVY/
 reference_models/
 felix/
 LJSpeech_dataset/
-audio/
 wav2vec2_checkpoint/
 pretrained_models/
 figures/
