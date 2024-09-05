@@ -167,6 +167,42 @@ using a differentiable harmonic plus noise model</title>
   
 </div>
 
+<div class="container" id="table_effects">
+    <h2>Influence of the vocoder</h2>
+    <p>Below are the voice extracts generated from training on the LJSpeech dataset, using either Griffin-Lim with 30 iterations as a vocoder or GomiGAN. While the intelligibility of the words is similar in both cases, the audio quality produced by GomiGAN is slightly better, and GomiGAN is 15 times faster when using a GPU:</p>
+    <table class="table table-responsive">
+      <thead>
+        <tr class="text-center">
+          <td rowspan="2"></td>
+          <td rowspan="2"></td>
+          <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">Vocoder</td>
+      </tr>
+      <tr class="text-center">
+          <td style="border-left: 1px solid rgb(185, 185, 185);">Griffin-Lim (30 iter)</td>
+          <td>GomiGAN</td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="desc">LJ002-0068</td>
+          <td class="desc">LJSpeech</td>
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=40+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+step=vocode+tho_type=fast___grifflim___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+          <td class="text-center">
+              <audio controls class="sample_audio">
+                  <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
+              </audio>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  
+    
+  </div>
+
 <script>
 function setupCallback(elem, elems) {
   elem.addEventListener("play", function () {
