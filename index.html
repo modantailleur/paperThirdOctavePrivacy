@@ -10,7 +10,7 @@ using a differentiable harmonic plus noise model</title>
 <body>
 
     <div id="header" class="container-fluid">
-            <h1>Fast Third-Octave Privacy</h1>
+            <h1>Diffusion-based Spectral Super-Resolution of <br>Third Octave Acoustic Sensor Data: Is Privacy at Risk ?</h1>
    </div>
 
 
@@ -23,12 +23,20 @@ using a differentiable harmonic plus noise model</title>
 <div class="container">
     <h2>Abstract</h2>
     <p>
-      TBF    </p>
+
+        Third octave spectral recording of Acoustic sensor data is an effective way of measuring the environment. While there is strong evidence that slow (1s frame, 1 Hz rate) and fast (125ms frame, 8Hz rate) versions lead by-design to unintelligible speech if reconstructed, the advent of high quality reconstruction methods based on diffusion may pose a threat, as those approaches can embed a significant amount of <i>a priori</i> knowledge when learned over extensive speech datasets. 
+
+        This paper aims to assess this risk at three levels of attacks with a growing level  of <i>a priori</i> knowledge considered at the learning of the diffusion model, a) none, b) multi-speaker data excluding the target speaker and c) target speaker. Without any prior regarding the speech profile of the speaker (levels a and b), our results suggest a rather low risk as the word-error-rate both for humans and automatic recognition remains higher than 89%.
+
+
+    </p>
+    <p>This is the companion page for the paper: TBF</p>
+    <p>Please, cite as: TBF</p>
     <p>Experience code is available in <a href="https://github.com/modantailleur/paperThirdOctavePrivacy">this github repository</a>.</p>
 </div>
 
 <div class="container" id="table_techniques">
-  <h2>Voice retrieval from Fast Third-Octave</h2>
+  <h2>Voice reconstruction from Fast Third-Octave</h2>
   <p>Bellow, the voice extracts generated from the different methods on LJ002-0068.wav audio from the LJSpeech test set.</p>
   <table class="table table-responsive">
       <thead>
@@ -37,15 +45,15 @@ using a differentiable harmonic plus noise model</title>
           <td rowspan="2"></td>
           <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">AL0</td>
           <td style="border-left: 1px solid rgb(185, 185, 185);">AL1</td>
-          <td colspan="2" style="border-left: 1px solid rgb(185, 185, 185);">AL2</td>
+          <td colspan="1" style="border-left: 1px solid rgb(185, 185, 185);">AL2</td>
           <td rowspan="2" style="border-left: 1px solid rgb(185, 185, 185);">Reference</td>
       </tr>
       <tr class="text-center">
           <td style="border-left: 1px solid rgb(185, 185, 185);">PINV</td>
-          <td>Diffspec</td>
+          <td >Diffspec</td>
           <td style="border-left: 1px solid rgb(185, 185, 185);">Diffspec</td>
-          <td style="border-left: 1px solid rgb(185, 185, 185);">Diffwave</td>
-          <td>Diffspec</td>
+          <!-- <td style="border-left: 1px solid rgb(185, 185, 185);">Diffwave</td> -->
+          <td style="border-left: 1px solid rgb(185, 185, 185);">Diffspec</td>
       </tr>
       </thead>
       <tbody>
@@ -67,12 +75,12 @@ using a differentiable harmonic plus noise model</title>
                   <source src="audio/for_companion_page/dataset=librispeech+diff_steps=1000+epoch=40+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
               </audio>
           </td>
-          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
+          <!-- <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
               <audio controls class="sample_audio">
                   <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffwave+schedule=DDPM+seed=71+step=vocode+tho_type=fast___LJ003-0180.wav" type="audio/wav">
               </audio>
-          </td>
-          <td class="text-center">
+          </td> -->
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
               <audio controls class="sample_audio">
                   <source src="audio/for_companion_page/dataset=ljspeech+diff_steps=1000+epoch=70+evalset=ljspeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___LJ003-0180.wav" type="audio/wav">
               </audio>
@@ -101,8 +109,8 @@ using a differentiable harmonic plus noise model</title>
                   <source src="audio/for_companion_page/dataset=librispeech+diff_steps=1000+epoch=40+evalset=librispeech+learning_rate=-4+method=diffusion+schedule=DDPM+seed=71+step=vocode+tho_type=fast___gomin___8463-294828-0003.wav" type="audio/wav">
               </audio>
           </td>
-          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">-</td> <!-- Replaced audio with a dash -->
-          <td class="text-center">-</td> <!-- Replaced audio with a dash -->
+          <!-- <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">-</td> Replaced audio with a dash -->
+          <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">-</td> 
           <td class="text-center" style="border-left: 1px solid rgb(185, 185, 185);">
               <audio controls class="sample_audio">
                   <source src="audio/for_companion_page/8463-294828-0003.wav" type="audio/wav">
@@ -111,13 +119,21 @@ using a differentiable harmonic plus noise model</title>
       </tr>
       </tbody>
     </table>
-    <p>On the PINV audios, Whisper "large-v3" leads to a WER of 60%, which seems wrong as no word is seemingly intelligible.</p>
-
+    <p>Here is the Whisper "large-v3" transcription using the PINV algorithm for the LJ002-0068.wav audio: <br>
+        <i>"These words were always supposed to go on the floor. Sometimes they all went on for a boon or a comedy or a family or a friend."</i>
+    </p>
+    <p>And for the 8463-294828-0003.flac audio:<br>
+        <i>"I'll be back in Hawaii to see my country again. I'm a friend. I'm not a scorer by the temple gardens. I really love relations."</i>
+    </p>
+    <p>Although most of the words are incorrect, it is notable 
+    that some are still accurately transcribed, despite the PINV audios being perceptually unintelligible.
+    Whisper "large-v3" model was thus removed from the discussions, as this behavior may result from overfitting 
+    due to the use of LJSpeech and LibriSpeech audio in training the Whisper models.</p>
 </div>
 
 <div class="container" id="table_effects">
   <h2>Influence of diffusion steps</h2>
-  <p>Bellow, the voice extracts generated from training on LJSpeech on LJ002-0068.wav audio from the LJSpeech test set. We can hear that with 200 diffusion steps, the audio quality is very similar, but less words can be understood, and speech is a little bit more jerky.</p>
+  <p>Below are the voice extracts generated from training on the LJSpeech dataset either with 200 diffusion steps or 1000 diffusion steps, using the LJ002-0068.wav audio from the LJSpeech test set. We observe that with 200 diffusion steps, the audio quality remains similar; however, fewer words are intelligible, and the speech becomes slightly more disjointed. The training with 1000 diffusion steps is thus retained for the experiment.</p>
   <table class="table table-responsive">
     <thead>
       <tr class="text-center">
