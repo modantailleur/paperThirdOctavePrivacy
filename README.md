@@ -89,3 +89,8 @@ To reproduce the paper's figures in the "figures" folder, launch:
 plot_spectro_icassp.py
 plot_spectro_raw_icassp.py
 ```
+
+## Companion page
+
+Please check the companion page for audio examples:
+https://modantailleur.github.io/paperThirdOctavePrivacy/
