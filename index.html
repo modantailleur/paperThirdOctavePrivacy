@@ -203,6 +203,65 @@ using a differentiable harmonic plus noise model</title>
     
   </div>
 
+  <div class="container" id="librispeech_results">
+    <h2>Additional Results</h2>
+    <p>In the previous section and in our paper, our models were evaluated on a subset of 100 samples from the LJSpeech dataset.
+        We also evaluated these models on 100 samples from LibriSpeech, a multi-speaker dataset. The speakers in the evaluation set are not present in the LibriSpeech training set. The table below presents the Word Error Rate (WER, in %)
+        for various attack levels, which combine different methods and training sets. For more details about the models, please refer to our paper. 
+        Results are found to be very similar to those presented in Table II of our paper, with the same peculiar tendencies of low WER for Whisper. </p>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Attack Level</th>
+                <th>Training Set</th>
+                <th>Method</th>
+                <th>FairseqS2T</th>
+                <th>W2V2</th>
+                <th>CRDNN</th>
+                <th>Whisper</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>Original (mel)</td>
+                <td>14.84 <small>(±3.86)</small></td>
+                <td>10.83 <small>(±1.91)</small></td>
+                <td>11.59 <small>(±2.05)</small></td>
+                <td>10.50 <small>(±1.86)</small></td>
+            </tr>
+            <tr>
+                <td rowspan="2">AL0</td>
+                <td>-</td>
+                <td>PINV transc.</td>
+                <td>95.76 <small>(±0.74)</small></td>
+                <td>93.62 <small>(±1.12)</small></td>
+                <td>97.15 <small>(±0.60)</small></td>
+                <td>75.74 <small>(±4.01)</small></td>
+            </tr>
+            <tr>
+                <td>TAU</td>
+                <td>Diffspec</td>
+                <td>91.58 <small>(±1.63)</small></td>
+                <td>88.41 <small>(±1.63)</small></td>
+                <td>93.18 <small>(±1.24)</small></td>
+                <td>91.03 <small>(±2.29)</small></td>
+            </tr>
+            <tr>
+                <td>AL1</td>
+                <td>Librispeech</td>
+                <td>Diffspec</td>
+                <td>84.33 <small>(±2.31)</small></td>
+                <td>82.32 <small>(±2.09)</small></td>
+                <td>86.05 <small>(±2.33)</small></td>
+                <td>82.00 <small>(±2.62)</small></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <script>
 function setupCallback(elem, elems) {
   elem.addEventListener("play", function () {
