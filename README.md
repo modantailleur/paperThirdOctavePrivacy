@@ -1,4 +1,8 @@
-# Using Diffusion Models to recover voice from 1/3 oct recordings
+# Diffusion-based spectral super-resolution of third octave acoustic sensor data: is privacy at risk?
+
+This repository contains code for the paper:
+
+Tailleur, M., Benaatia, C., Lagrange, M., Aumond, P., & Tourre, V. (2025). [Diffusion-based spectral super-resolution of third octave acoustic sensor data: is privacy at risk?](https://hal.science/hal-05096000/). In EUSIPCO.
 
 ## Setup
 
