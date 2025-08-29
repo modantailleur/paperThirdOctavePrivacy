@@ -295,7 +295,7 @@ class WerMetricSB():
             audio_input = audio_input.mean(dim=0, keepdim=True)
         
         # audio_input = audio_input.to(torch.device("cpu"))
-        transcription = self.asr_model.transcribe_file(audio)
+        transcription = self.asr_model.transcribe_file(audio_input)
         
         return transcription
     
